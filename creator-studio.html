@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#10131f"><meta name="description" content="FANORA Creator Studio preview">
+<meta name="theme-color" content="#10131f"><meta name="description" content="FANORA Creator Studio">
 <title>Creator Studio — FANORA</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="studio.css">
 </head>
 <body>
 <header><a class="brand" href="index.html"><span>F</span> FANORA</a><a class="back" href="index.html">← Back to FANORA</a></header>
 <main>
-<div class="notice"><b>PREVIEW MODE</b> This studio saves demo content only in this browser. No account, server, or cloud storage is connected.</div>
-<section class="intro"><div><p class="eyebrow">YOUR CREATOR SPACE</p><h1>Creator<br><em>Studio.</em></h1><p>Shape your profile, publish a preview post, and see how your creator page could look.</p></div><div class="profile-badge">✦<small>YOUR SPACE</small></div></section>
+<div class="notice"><b>CONNECTED BETA</b> Create an account to save your creator profile and posts to FANORA's cloud database. Email verification may be required.</div>
+<section class="intro"><div><p class="eyebrow">YOUR CREATOR SPACE</p><h1>Creator<br><em>Studio.</em></h1><p>Register, build your creator profile, and publish your first post.</p></div><div class="profile-badge">✦<small>YOUR SPACE</small></div></section>
+<section class="panel auth-panel"><p class="eyebrow">ACCOUNT ACCESS</p><h2>Sign up or log in</h2>
+<form id="authForm"><label>Email<input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"></label><div class="auth-actions"><button class="button" type="button" id="signUp">Create account</button><button class="button secondary" type="submit">Log in</button><button class="subtle" type="button" id="signOut" hidden>Log out</button></div></form><p class="hint" id="authStatus" aria-live="polite">You are not logged in.</p></section>
 <div class="layout">
 <section class="panel"><p class="eyebrow">01 / PROFILE</p><h2>Tell your story</h2>
 <form id="profileForm"><label>Display name<input id="displayName" maxlength="80" placeholder="Your creator name" required></label><label>Username<input id="username" maxlength="30" pattern="[A-Za-z0-9_]{3,30}" placeholder="yourname" required></label><label>Short bio<textarea id="bio" maxlength="500" rows="4" placeholder="What do you create?"></textarea></label><button class="button" type="submit">Save profile</button></form><p class="hint" id="profileStatus" aria-live="polite"></p></section>
 <section class="panel"><p class="eyebrow">02 / CONTENT</p><h2>Create a post</h2>
-<form id="postForm"><label>Post title<input id="postTitle" maxlength="160" placeholder="A new idea..." required></label><label>Post text<textarea id="postBody" maxlength="5000" rows="5" placeholder="Share something with your audience..."></textarea></label><label>Visibility<select id="visibility"><option value="public">Public preview</option><option value="members">Members-only (preview label)</option></select></label><button class="button" type="submit">Publish preview</button></form><p class="hint" id="postStatus" aria-live="polite"></p></section>
+<form id="postForm"><label>Post title<input id="postTitle" maxlength="160" placeholder="A new idea..." required></label><label>Post text<textarea id="postBody" maxlength="5000" rows="5" placeholder="Share something with your audience..."></textarea></label><label>Visibility<select id="visibility"><option value="public">Public</option><option value="members">Members-only (coming soon)</option></select></label><button class="button" type="submit">Publish post</button></form><p class="hint" id="postStatus" aria-live="polite"></p></section>
 </div>
-<section class="preview"><div class="preview-head"><div><p class="eyebrow">03 / LIVE PREVIEW</p><h2>Your creator page</h2></div><button class="subtle" id="resetDemo" type="button">Reset demo</button></div><div class="creator-card"><div class="avatar" id="avatar">F</div><div><h3 id="previewName">Your name</h3><p class="handle" id="previewHandle">@yourname</p><p id="previewBio">Your bio will appear here.</p></div></div><div id="posts" class="posts"><p class="empty">Your preview posts will appear here.</p></div></section>
-</main><footer>© FANORA · Creator Studio preview</footer><script src="studio.js"></script>
+<section class="preview"><div class="preview-head"><div><p class="eyebrow">03 / YOUR CONTENT</p><h2>Your creator page</h2></div><button class="subtle" id="refreshPosts" type="button">Refresh</button></div><div class="creator-card"><div class="avatar" id="avatar">F</div><div><h3 id="previewName">Your name</h3><p class="handle" id="previewHandle">@yourname</p><p id="previewBio">Your bio will appear here.</p></div></div><div id="posts" class="posts"><p class="empty">Log in to load your posts.</p></div></section>
+</main><footer>© FANORA · Creator Studio</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<script src="studio.js"></script>
 </body></html>
