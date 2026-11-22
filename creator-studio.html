@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131f"><meta name="description" content="FANORA Creator Studio preview">
+<title>Creator Studio — FANORA</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="studio.css">
+</head>
+<body>
+<header><a class="brand" href="index.html"><span>F</span> FANORA</a><a class="back" href="index.html">← Back to FANORA</a></header>
+<main>
+<div class="notice"><b>PREVIEW MODE</b> This studio saves demo content only in this browser. No account, server, or cloud storage is connected.</div>
+<section class="intro"><div><p class="eyebrow">YOUR CREATOR SPACE</p><h1>Creator<br><em>Studio.</em></h1><p>Shape your profile, publish a preview post, and see how your creator page could look.</p></div><div class="profile-badge">✦<small>YOUR SPACE</small></div></section>
+<div class="layout">
+<section class="panel"><p class="eyebrow">01 / PROFILE</p><h2>Tell your story</h2>
+<form id="profileForm"><label>Display name<input id="displayName" maxlength="80" placeholder="Your creator name" required></label><label>Username<input id="username" maxlength="30" pattern="[A-Za-z0-9_]{3,30}" placeholder="yourname" required></label><label>Short bio<textarea id="bio" maxlength="500" rows="4" placeholder="What do you create?"></textarea></label><button class="button" type="submit">Save profile</button></form><p class="hint" id="profileStatus" aria-live="polite"></p></section>
+<section class="panel"><p class="eyebrow">02 / CONTENT</p><h2>Create a post</h2>
+<form id="postForm"><label>Post title<input id="postTitle" maxlength="160" placeholder="A new idea..." required></label><label>Post text<textarea id="postBody" maxlength="5000" rows="5" placeholder="Share something with your audience..."></textarea></label><label>Visibility<select id="visibility"><option value="public">Public preview</option><option value="members">Members-only (preview label)</option></select></label><button class="button" type="submit">Publish preview</button></form><p class="hint" id="postStatus" aria-live="polite"></p></section>
+</div>
+<section class="preview"><div class="preview-head"><div><p class="eyebrow">03 / LIVE PREVIEW</p><h2>Your creator page</h2></div><button class="subtle" id="resetDemo" type="button">Reset demo</button></div><div class="creator-card"><div class="avatar" id="avatar">F</div><div><h3 id="previewName">Your name</h3><p class="handle" id="previewHandle">@yourname</p><p id="previewBio">Your bio will appear here.</p></div></div><div id="posts" class="posts"><p class="empty">Your preview posts will appear here.</p></div></section>
+</main><footer>© FANORA · Creator Studio preview</footer><script src="studio.js"></script>
+</body></html>
