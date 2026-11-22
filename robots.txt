@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://free-official.github.io/fanora-platform/sitemap.xml
